@@ -1,0 +1,142 @@
+{
+	"info": {
+		"_postman_id": "dca10307-eb2e-4e03-9f85-efa64a6ce1dd",
+		"name": "BookReactive",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24391724",
+		"_collection_link": "https://gold-resonance-129876.postman.co/workspace/Team-Workspace~88e8bc4e-6d86-4bfd-842e-4cc827d332c8/collection/24391724-dca10307-eb2e-4e03-9f85-efa64a6ce1dd?action=share&creator=24391724&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "books",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"isbn\": \"123456789\",\r\n    \"name\": \"Reactive\",\r\n    \"pageNumber\": 199,\r\n    \"writer\": \"Manuel\",\r\n    \"publisher\": \"Reactive Publisher\",\r\n    \"yearEdition\": \"1960\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{path}}{{host}}{{port}}/books",
+					"host": [
+						"{{path}}{{host}}{{port}}"
+					],
+					"path": [
+						"books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "books",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/books",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"books"
+					],
+					"query": [
+						{
+							"key": "yearEdition",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "pagesNumber",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "name",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "books/{booksIsbn}",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/books/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"books",
+						"4"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "path",
+			"value": "http://",
+			"type": "string"
+		},
+		{
+			"key": "host",
+			"value": "localhost",
+			"type": "string"
+		},
+		{
+			"key": "port",
+			"value": ":8081",
+			"type": "string"
+		}
+	]
+}
