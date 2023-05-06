@@ -20,13 +20,13 @@ public class Book {
     @Field
     private String name;
     @Field
-    private int pages;
+    private int pagesNumber;
     @Field
     private String writer;
     @Field
     private String publisher;
     @Field
-    private int yearEdition;
+    private String yearEdition;
 
 
 
